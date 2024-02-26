@@ -1,0 +1,41 @@
+/* nav.css */
+
+/* Set the height and background color */
+nav {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF; /* Set font color */
+  font-family: 'Bungee', sans-serif; /* Set font family */
+  padding: 0 1.5em; /* Add space on the right and left */
+  box-sizing: border-box; /* Ensure padding is included in height */
+  width: 100%; /* Full width of the viewport */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center; /* Align items vertically */
+}
+
+
+/* Ensure span within nav inherits font family */
+nav span {
+  font-family: 'Bungee', sans-serif;
+}
+
+#write-button-text {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+/* Style for the content on the right */
+.nav-content-right {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  flex-direction: column;
+}
+
+/* Style for the angle-double-down icon */
+.fa-angle-double-down {
+  margin-left: 0.5em; /* Add some space to the left of the icon */
+  color: red;
+}

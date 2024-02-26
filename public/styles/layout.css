@@ -1,3 +1,5 @@
+/* layout.css */
+
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -18,6 +20,21 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif; /* Apply Source Sans 3 to everything in body */
+
+}
+
+main {
+  width: 90%;
+  margin: 0 auto; /* This centers the element horizontally */
+  background-color: inherit; /* This makes it inherit the background color of the body */
+}
+
+
+nav span {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /*
