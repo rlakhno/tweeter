@@ -7,7 +7,6 @@ $(document).ready(function () {
   // Your code goes here  submitTweet, tweetForm
   // Event listener for the submit event on the form
   $("#tweetForm").on("submit", function (event) {
-    alert("Handler for `submit` called.");
     event.preventDefault();
 
     // Serialize the form data into a query string
@@ -34,7 +33,6 @@ $(document).ready(function () {
   });
   // Define the loadTweets function
   const loadTweets = function () {
-    alert("Handler for `loadTweets` called.");
     // Make an AJAX GET request to /tweets
     $.ajax({
       type: "GET",
@@ -55,6 +53,9 @@ $(document).ready(function () {
 
 
   const renderTweets = function (tweets) {
+
+    // Clear existing tweets from the container
+    $('.tweets-container').empty();
     // loops through tweets
     for (let tweet of tweets) {
       // calls createTweetElement for each tweet
