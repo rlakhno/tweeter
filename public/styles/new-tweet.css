@@ -78,7 +78,7 @@ textarea {
   display: flex;
 }
 
-.tweet-container {
+.tweets-container {
   margin-top: 15px;
   border: 3px solid greenyellow;
 }
