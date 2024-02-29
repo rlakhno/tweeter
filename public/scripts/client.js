@@ -13,39 +13,60 @@ $(document).ready(function () {
     const formData = $(this).serialize();
     console.log("Form data:", formData); // Log the form data to the console
 
+    $.post("/tweets", formData)
+      .then(() => {
+        loadTweets();
+      })
+      .catch(error => {
+        console.error("Error posting tweet:", error);
+        // Handle the error here, such as displaying an error message to the user
+      });
 
-    // Send an AJAX POST request to the server
-    $.ajax({
-      type: "POST",
-      url: "/tweets", // Update the URL as per your server route
-      data: formData,
-      success: function (response) {
-        // If the request is successful, render the new tweet
-        renderTweets(response); // Assuming you have a function to render a single tweet
-      },
-      error: function (error) {
-        // Handle any errors that occur during the request
-        console.error("Error:", error);
-      }
-    });
+
+    // // Send an AJAX POST request to the server
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/tweets", // Update the URL as per your server route
+    //   data: formData,
+    //   success: function (response) {
+    //     // If the request is successful, render the new tweet
+    //     renderTweets(response); // Assuming you have a function to render a single tweet
+    //     loadTweets();
+    //   },
+    //   error: function (error) {
+    //     // Handle any errors that occur during the request
+    //     console.error("Error:", error);
+    //   }
+
+    // });
 
 
   });
   // Define the loadTweets function
   const loadTweets = function () {
     // Make an AJAX GET request to /tweets
-    $.ajax({
-      type: "GET",
-      url: "/tweets",
-      dataType: "json",
-      success: function (tweets) {
-        // Call the renderTweets function and pass the array of tweets
+    $.get("/tweets")
+      .then(tweets => {
         renderTweets(tweets);
-      },
-      error: function (error) {
-        console.log("Error fetching tweets", error);
-      }
-    });
+      })
+      .catch(error => {
+        console.error("Error fetching tweets:", error);
+        // Handle the error here, such as displaying an error message to the user
+      });
+
+
+    // $.ajax({
+    //   type: "GET",
+    //   url: "/tweets",
+    //   dataType: "json",
+    //   success: function (tweets) {
+    //     // Call the renderTweets function and pass the array of tweets
+    //     renderTweets(tweets);
+    //   },
+    //   error: function (error) {
+    //     console.log("Error fetching tweets", error);
+    //   }
+    // });
   }
 
   // Call the loadTweets function to load tweets on page load
@@ -61,7 +82,7 @@ $(document).ready(function () {
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
-      $('.tweets-container').append($tweet);
+      $('.tweets-container').prepend($tweet);
     }
   }
 
