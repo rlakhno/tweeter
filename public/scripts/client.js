@@ -11,9 +11,20 @@ $(document).ready(function () {
 
     // Serialize the form data into a query string
     const formData = $(this).serialize();
-    console.log("Form data:", formData); // Log the form data to the console
 
-    $.post("/tweets", formData)
+    // Get tweet text from the form
+    const tweetText = $("#tweet-text").val();
+    alert(tweetText);
+
+    // Check if tweet text is empty
+    if (!tweetText) {
+      // Notify the user the tweet is not present
+      alert("Error: Tweet content cannot be empty");
+    } else if (tweetText.length > 140) {
+        // Notify the user that the tweet content is too long
+        alert("Error: Tweet content exceeds the maximum character limit of 140");
+      } else {
+        $.post("/tweets", formData)
       .then(() => {
         loadTweets();
       })
@@ -21,25 +32,9 @@ $(document).ready(function () {
         console.error("Error posting tweet:", error);
         // Handle the error here, such as displaying an error message to the user
       });
+    }
 
-
-    // // Send an AJAX POST request to the server
-    // $.ajax({
-    //   type: "POST",
-    //   url: "/tweets", // Update the URL as per your server route
-    //   data: formData,
-    //   success: function (response) {
-    //     // If the request is successful, render the new tweet
-    //     renderTweets(response); // Assuming you have a function to render a single tweet
-    //     loadTweets();
-    //   },
-    //   error: function (error) {
-    //     // Handle any errors that occur during the request
-    //     console.error("Error:", error);
-    //   }
-
-    // });
-
+    
 
   });
   // Define the loadTweets function
@@ -54,19 +49,6 @@ $(document).ready(function () {
         // Handle the error here, such as displaying an error message to the user
       });
 
-
-    // $.ajax({
-    //   type: "GET",
-    //   url: "/tweets",
-    //   dataType: "json",
-    //   success: function (tweets) {
-    //     // Call the renderTweets function and pass the array of tweets
-    //     renderTweets(tweets);
-    //   },
-    //   error: function (error) {
-    //     console.log("Error fetching tweets", error);
-    //   }
-    // });
   }
 
   // Call the loadTweets function to load tweets on page load
