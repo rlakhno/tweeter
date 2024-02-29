@@ -9,13 +9,11 @@ $(document).ready(function () {
   $("#tweetForm").on("submit", function (event) {
     event.preventDefault();
 
-    // Get tweet text from the form
+    // Get the tweet text from the form and trim leading/trailing whitespace
     const tweetText = $("#tweet-text").val().trim();
-    alert(tweetText);
 
-    // Check if tweet text is empty
+     // Validate the tweet text
     if (isTweetValid(tweetText)) {
-      alert("Validation is true");
 
       // Serialize the form data into a query string
       const formData = $(this).serialize();
@@ -44,10 +42,8 @@ $(document).ready(function () {
       // Notify the user that the tweet content is too long
       alert("Error: Tweet content exceeds the maximum character limit of 140");
       return false;
-    } else {
-
-      return true;
-    }
+    }  // Tweet is valid
+    return true;
   }
 
 
