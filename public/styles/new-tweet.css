@@ -114,3 +114,17 @@ textarea {
   margin-top: 10px;
 }
 
+/* Media query for desktop view (1024px and above) */
+@media screen and (min-width: 1024px) {
+  /* Flex container for desktop layout */
+  main {
+    width: 60%;
+    float: right;
+    margin-top: 120px;
+  } 
+
+  /* #tweetForm {
+    flex: 1; /* Form takes up 50% of the width 
+    padding-left: 20px; /* Add spacing between Header and Form 
+  } */
+}

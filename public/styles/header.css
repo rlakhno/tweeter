@@ -2,7 +2,7 @@
 
 .header {
   position: relative;
-  height: calc(400px + 120px); /* Height of visible portion + height of the nav bar */
+  height: calc(300px + 120px); /* Height of visible portion + height of the nav bar */
   margin-top: 120px;
   width: 100%;
   display: flex;
@@ -26,4 +26,18 @@
 .header h2 {
   margin-top: 20px; /* Adjust as needed */
   font-size: 24px; /* Adjust as needed */
+}
+
+
+/* Media query for desktop view (1024px and above) */
+@media screen and (min-width: 1024px) {
+
+  /* Adjust flex properties for Header and Form sections */
+  .header {
+    width: 33.3%;
+    float: left;
+    margin-top: 10%;
+    margin-left: 2%;
+  }
+
 }
