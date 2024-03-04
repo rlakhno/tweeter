@@ -16,3 +16,15 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser 1.15.2
+- chance 1.0.2
+- md5 2.1.0
+
+## Screenshots
+
+- Main Page
+![/public/images/mainView.png]
+- Tablet View
+![/public/images/tabletView.png]
+- Main Page
+![/public/images/errorTweetTooLong.png]
