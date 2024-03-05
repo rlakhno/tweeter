@@ -20,10 +20,10 @@ This repository is the starter code for the project: Students will fork and clon
 - chance 1.0.2
 - md5 2.1.0
 
-## Screenshots
+## Screenshots of the Final Product
 
 - Main Page
-![/public/images/mainView.png]
+!["/public/images/mainView.png"](https://github.com/rlakhno/tweeter/blob/master/public/images/mainView.png)
 - Tablet View
 ![/public/images/tabletView.png]
 - Main Page
