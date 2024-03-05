@@ -24,7 +24,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Main Page
 !["/public/images/mainView.png"](https://github.com/rlakhno/tweeter/blob/master/public/images/mainView.png)
+
 - Tablet View
 ![/public/images/tabletView.png](https://github.com/rlakhno/tweeter/blob/master/public/images/tabletView.png)
+
 - Error: Tweet is Too Long Page
 ![/public/images/errorTweetTooLong.png](https://github.com/rlakhno/tweeter/blob/master/public/images/errorTweetTooLong.png)
